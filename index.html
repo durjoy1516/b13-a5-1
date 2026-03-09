@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+
     <style>
         *{
             font-family: "Geist", sans-serif;
@@ -16,72 +17,96 @@
 
 <body class="bg-gray-100">
 
-    <!-- LOGIN PAGE -->
-    <div id="loginPage" class="min-h-screen flex items-center justify-center">
-        <div class="bg-white w-[400px] p-8 rounded-lg shadow">
-            <div class="text-center mb-6">
-                <img src="./assets/github-logo.png" class="w-12 mx-auto">
-                <h1 class="text-xl font-semibold mt-2">GitHub Issues Tracker</h1>
-                <p class="text-gray-500 text-sm">Sign in to manage your issues</p>
-            </div>
+<!-- LOGIN PAGE -->
+<div id="loginPage" class="min-h-screen flex items-center justify-center px-4"> <!-- responsive -->
 
-            <label class="text-sm">Username</label>
-            <input id="username" class="w-full border p-2 rounded mt-1" placeholder="Enter username">
-            <p class="text-purple-600 text-xs">Default: admin</p>
+    <div class="bg-white w-full sm:w-[400px] p-6 sm:p-8 rounded-lg shadow"> <!-- responsive -->
 
-            <label class="text-sm mt-3 block">Password</label>
-            <input id="password" type="password" class="w-full border p-2 rounded mt-1" placeholder="Enter password">
-            <p class="text-purple-600 text-xs">Default: admin123</p>
-
-            <button onclick="login()" class="w-full mt-4 py-2 rounded text-white bg-[#4a00ff] to-blue-500">Sign In</button>
-            <p class="text-center text-gray-400 mt-3">OR</p>
-            <div class="bg-gray-100 p-3 text-center text-sm rounded mt-3">
-                <p><strong>Username:</strong> admin</p>
-                <p><strong>Password:</strong> admin123</p>
-            </div>
+        <div class="text-center mb-6">
+            <img src="./assets/github-logo.png" class="w-10 sm:w-12 mx-auto"> <!-- responsive -->
+            <h1 class="text-lg sm:text-xl font-semibold mt-2">GitHub Issues Tracker</h1> <!-- responsive -->
+            <p class="text-gray-500 text-sm">Sign in to manage your issues</p>
         </div>
-    </div>
 
+        <label class="text-sm">Username</label>
+        <input id="username" class="w-full border p-2 rounded mt-1" placeholder="Enter username">
+        <p class="text-purple-600 text-xs">Default: admin</p>
+
+        <label class="text-sm mt-3 block">Password</label>
+        <input id="password" type="password" class="w-full border p-2 rounded mt-1" placeholder="Enter password">
+        <p class="text-purple-600 text-xs">Default: admin123</p>
+
+        <button onclick="login()" class="w-full mt-4 py-2 rounded text-white bg-[#4a00ff]">
+            Sign In
+        </button>
+
+        <p class="text-center text-gray-400 mt-3">OR</p>
+
+        <div class="bg-gray-100 p-3 text-center text-sm rounded mt-3">
+            <p><strong>Username:</strong> admin</p>
+            <p><strong>Password:</strong> admin123</p>
+        </div>
+
+    </div>
+</div>
 
 
 <!-- DASHBOARD -->
-<div id="dashboardPage" class="hidden">  //will add hidden
+<div id="dashboardPage" class="hidde">
 
     <!-- NAVBAR -->
-    <div class="flex justify-between items-center p-4 border-b bg-white">
-        <h1 class="font-semibold text-lg">GitHub Issues Tracker</h1>
+    <div class="flex flex-col md:flex-row md:justify-between md:items-center gap-3 p-4 border-b bg-white"> <!-- responsive -->
 
-        <div class="flex gap-3">
+        <h1 class="font-semibold text-lg text-center md:text-left">
+            GitHub Issues Tracker
+        </h1>
 
-            <!-- NEW ADDED -->
+        <div class="flex flex-col sm:flex-row gap-2 sm:gap-3"> <!-- responsive -->
+
             <input 
             id="searchInput"
             oninput="searchIssue()" 
             placeholder="Search issues..." 
-            class="border px-3 py-1 rounded">
+            class="border px-3 py-2 sm:py-1 rounded w-full sm:w-auto"> <!-- responsive -->
 
-            <!-- NEW ADDED -->
-            <button onclick="addNewIssue()" class="bg-purple-600 text-white px-4 py-1 rounded">
-                Add New Issue
+            <button onclick="addNewIssue()" 
+            class="flex items-center gap-2 bg-[#4a00ff] text-white px-4 py-2 sm:py-1 rounded w-full sm:w-auto"> <!-- responsive -->
+                <img src="./assets/plus.png" alt="" class="w-4 h-4"> New Issue
             </button>
 
         </div>
+
     </div>
 
     <!-- TABS -->
-    <div class="flex gap-3 p-6">
-        <button onclick="changeTab('all', event)" class="tabBtn px-4 py-2 border rounded bg-purple-600 text-white">All</button>
-        <button onclick="changeTab('open', event)" class="tabBtn px-4 py-2 border rounded">Open</button>
-        <button onclick="changeTab('closed', event)" class="tabBtn px-4 py-2 border rounded">Closed</button>
+    <div class="flex flex-wrap gap-3 p-4 sm:p-6"> <!-- responsive -->
+
+        <button onclick="changeTab('all', event)" 
+        class="tabBtn px-4 py-2 border rounded bg-purple-600 text-white w-full sm:w-auto"> <!-- responsive -->
+            All
+        </button>
+
+        <button onclick="changeTab('open', event)" 
+        class="tabBtn px-4 py-2 border rounded w-full sm:w-auto"> <!-- responsive -->
+            Open
+        </button>
+
+        <button onclick="changeTab('closed', event)" 
+        class="tabBtn px-4 py-2 border rounded w-full sm:w-auto"> <!-- responsive -->
+            Closed
+        </button>
+
     </div>
 
     <!-- ISSUE COUNT -->
-    <div class="flex justify-between items-center px-6">
-    
+    <div class="flex flex-col md:flex-row md:justify-between md:items-center gap-3 px-4 sm:px-6"> <!-- responsive -->
+
         <div>
             <img src="./assets/Aperture.png" alt="">
+            <div>
             <h2 id="issueCount" class="font-semibold">Issues</h2>
             <p class="text-gray-500 text-sm">Track and manage your project issues</p>
+            </div>
         </div>
 
         <div class="flex gap-4 text-sm">
@@ -93,18 +118,19 @@
 
     <!-- LOADER -->
     <div id="loader" class="text-center mt-6 hidden">
-        <h2 class="font-bold text-2xl text-yellow-950">Loading...</h2>
+        <h2 class="font-bold text-xl sm:text-2xl text-yellow-950">Loading...</h2> <!-- responsive -->
     </div>
 
     <!-- ISSUE GRID -->
-    <div id="issueContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 p-6">
+    <div id="issueContainer" 
+    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 p-4 sm:p-6"> <!-- responsive -->
     </div>
 
 </div>
 
+
 <!-- MODAL -->
-<div id="modal" class="hidden">
-</div>
+<div id="modal" class="hidden"></div>
 
 <script src="script.js"></script>
 
