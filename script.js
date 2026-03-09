@@ -32,7 +32,7 @@ function changeTab(type, event) {
 }
 
 
-// COMMON CARD RENDER FUNCTION (NEW ADDED - design same)
+// CARD RENDERING
 function renderCard(issue) {
 
     let border = issue.status === "open" ? "border-green-500" : "border-purple-500";
