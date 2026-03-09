@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         *{
             font-family: "Geist", sans-serif;
@@ -18,13 +18,13 @@
 <body class="bg-gray-100">
 
 <!-- LOGIN PAGE -->
-<div id="loginPage" class="min-h-screen flex items-center justify-center px-4"> <!-- responsive -->
+<div id="loginPage" class="min-h-screen flex items-center justify-center px-4">
 
-    <div class="bg-white w-full sm:w-[400px] p-6 sm:p-8 rounded-lg shadow"> <!-- responsive -->
+    <div class="bg-white w-full sm:w-[400px] p-6 sm:p-8 rounded-lg shadow">
 
         <div class="text-center mb-6">
-            <img src="./assets/github-logo.png" class="w-10 sm:w-12 mx-auto"> <!-- responsive -->
-            <h1 class="text-lg sm:text-xl font-semibold mt-2">GitHub Issues Tracker</h1> <!-- responsive -->
+            <img src="./assets/github-logo.png" class="w-10 sm:w-12 mx-auto"> 
+            <h1 class="text-lg sm:text-xl font-semibold mt-2">GitHub Issues Tracker</h1> 
             <p class="text-gray-500 text-sm">Sign in to manage your issues</p>
         </div>
 
@@ -55,23 +55,23 @@
 <div id="dashboardPage" class="hidde">
 
     <!-- NAVBAR -->
-    <div class="flex flex-col md:flex-row md:justify-between md:items-center gap-3 p-4 border-b bg-white"> <!-- responsive -->
+    <div class="flex flex-col md:flex-row md:justify-between md:items-center gap-3 p-4 border-b bg-white">
 
         <h1 class="font-semibold text-lg text-center md:text-left">
             GitHub Issues Tracker
         </h1>
 
-        <div class="flex flex-col sm:flex-row gap-2 sm:gap-3"> <!-- responsive -->
+        <div class="flex flex-col sm:flex-row gap-2 sm:gap-3"> 
 
             <input 
             id="searchInput"
             oninput="searchIssue()" 
-            placeholder="Search issues..." 
-            class="border px-3 py-2 sm:py-1 rounded w-full sm:w-auto"> <!-- responsive -->
+            placeholder= "Search issues..." 
+            class="border px-3 py-2 sm:py-1 rounded w-full sm:w-auto"> 
 
             <button onclick="addNewIssue()" 
-            class="flex items-center gap-2 bg-[#4a00ff] text-white px-4 py-2 sm:py-1 rounded w-full sm:w-auto"> <!-- responsive -->
-                <img src="./assets/plus.png" alt="" class="w-4 h-4"> New Issue
+            class="flex items-center gap-2 bg-[#4a00ff] text-white px-4 py-2 sm:py-1 rounded w-full sm:w-auto">
+            <img src="./assets/plus.png" alt="" class="w-4 h-4"> New Issue
             </button>
 
         </div>
@@ -79,27 +79,27 @@
     </div>
 
     <!-- TABS -->
-    <div class="flex flex-wrap gap-3 p-4 sm:p-6"> <!-- responsive -->
+    <div class="flex flex-wrap gap-3 p-4 sm:p-6"> 
 
         <button onclick="changeTab('all', event)" 
-        class="tabBtn px-4 py-2 border rounded bg-purple-600 text-white w-full sm:w-auto"> <!-- responsive -->
+        class="tabBtn px-4 py-2 border rounded bg-purple-600 text-white w-full sm:w-auto"> 
             All
         </button>
 
         <button onclick="changeTab('open', event)" 
-        class="tabBtn px-4 py-2 border rounded w-full sm:w-auto"> <!-- responsive -->
+        class="tabBtn px-4 py-2 border rounded w-full sm:w-auto">
             Open
         </button>
 
         <button onclick="changeTab('closed', event)" 
-        class="tabBtn px-4 py-2 border rounded w-full sm:w-auto"> <!-- responsive -->
+        class="tabBtn px-4 py-2 border rounded w-full sm:w-auto">
             Closed
         </button>
 
     </div>
 
     <!-- ISSUE COUNT -->
-    <div class="flex flex-col md:flex-row md:justify-between md:items-center gap-3 px-4 sm:px-6"> <!-- responsive -->
+    <div class="flex flex-col md:flex-row md:justify-between md:items-center gap-3 px-4 sm:px-6">
 
         <div>
             <img src="./assets/Aperture.png" alt="">
@@ -118,12 +118,12 @@
 
     <!-- LOADER -->
     <div id="loader" class="text-center mt-6 hidden">
-        <h2 class="font-bold text-xl sm:text-2xl text-yellow-950">Loading...</h2> <!-- responsive -->
+        <h2 class="font-bold text-xl sm:text-2xl text-yellow-950">Loading...</h2> 
     </div>
 
     <!-- ISSUE GRID -->
     <div id="issueContainer" 
-    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 p-4 sm:p-6"> <!-- responsive -->
+    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 p-4 sm:p-6"> 
     </div>
 
 </div>
