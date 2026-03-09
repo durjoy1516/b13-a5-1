@@ -147,12 +147,12 @@ async function openModal(id) {
     <div class="grid grid-cols-2 items-start mb-3">
 
         <div>
-            <p class="text-sm font-semibold text-gray-500">Assignee</p>
+            <p class="text-sm font-semibold text-gray-500">Assignee:</p>
             <p class="text-gray-800">${issue.assignee}</p>
         </div>
 
         <div>
-            <p class="text-sm font-semibold text-gray-500 ">Priority</p>
+            <p class="text-sm font-semibold text-gray-500 ">Priority:</p>
 
             <span class="${issue.priority === 'high'
                 ? 'bg-red-100 text-red-500'
