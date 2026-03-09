@@ -87,11 +87,11 @@ async function loadIssues(type) {
                 </h2>
 
                 <div class="flex gap-2 mt-4">
-                    <span class="border border-red-300 bg-red-50 text-red-500 text-xs font-semibold px-3 py-1 rounded-full">
+                    <span class="border border-red-300 bg-red-50 text-red-500 text-xs font-semibold px-3 py-1 rounded-full flex justify gap-1"> 
                         BUG
                     </span>
 
-                    <span class="border border-yellow-300 bg-yellow-50 text-yellow-600 text-xs font-semibold px-3 py-1 rounded-full">
+                    <span class="border border-yellow-300 bg-yellow-50 text-yellow-600 text-xs font-semibold px-3 py-1 rounded-full flex  ">
                         HELP WANTED
                     </span>
                 </div>
